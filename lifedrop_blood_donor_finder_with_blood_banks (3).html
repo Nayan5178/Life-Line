@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c81732" />
+<title>BLOOD LINK — </title>
+<style>
+:root{--red:#c81732;--red2:#f04458;--ink:#172033;--muted:#687386;--bg:#fff8f8;--line:#f0dfe2;--green:#12805c;--shadow:0 18px 50px rgba(77,18,31,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}button,input,select,textarea{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #f5e7e9}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:850;letter-spacing:-.7px}.logo{display:grid;place-items:center;width:42px;height:42px;background:var(--red);color:white;border-radius:14px;font-size:23px;box-shadow:0 8px 20px #c8173230}.brand span em{font-style:normal;color:var(--red)}.navlinks{display:flex;gap:26px;color:#596273;font-size:.93rem;font-weight:650}.navlinks a:hover{color:var(--red)}.nav-actions{display:flex;gap:10px}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s;white-space:nowrap}.btn:hover{transform:translateY(-1px)}.primary{background:var(--red);color:white;box-shadow:0 8px 18px #c8173227}.primary:hover{background:#a91027}.soft{background:#fff0f2;color:var(--red)}.outline{background:white;border:1px solid var(--line);color:var(--ink)}.menu-toggle{display:none;background:none;border:0;font-size:26px}
+.hero{overflow:hidden;background:radial-gradient(circle at 85% 20%,#ffdce2 0,transparent 30%),linear-gradient(115deg,#fff7f7,#fff 62%);padding:72px 0 60px;position:relative}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #ffd4db;background:#fff;color:var(--red);border-radius:100px;font-weight:800;font-size:.78rem;letter-spacing:.5px;text-transform:uppercase}.pulse{width:8px;height:8px;background:#e52c45;border-radius:50%;box-shadow:0 0 0 5px #ffe3e7}.hero h1{font-size:clamp(2.7rem,5.3vw,4.65rem);line-height:1.04;letter-spacing:-3px;margin:22px 0 18px;max-width:680px}.hero h1 span{color:var(--red)}.hero p{font-size:1.08rem;line-height:1.8;color:var(--muted);max-width:590px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0 27px}.trust{display:flex;align-items:center;gap:12px;color:#697385;font-size:.9rem}.avatars{display:flex}.avatars span{width:31px;height:31px;border-radius:50%;border:2px solid white;background:#ffe0e4;display:grid;place-items:center;margin-left:-7px;font-size:14px}.avatars span:first-child{margin-left:0}.trust strong{color:var(--ink)}.hero-art{min-height:390px;position:relative;display:grid;place-items:center}.orb{width:min(360px,85%);aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#ffccd4,#fff0f2);display:grid;place-items:center;position:relative}.big-drop{font-size:170px;filter:drop-shadow(0 22px 22px #b20c2c38);transform:rotate(8deg)}.float-card{position:absolute;background:#fff;border:1px solid #f5e4e7;box-shadow:var(--shadow);padding:15px 17px;border-radius:18px;display:flex;align-items:center;gap:12px}.float-card small{display:block;color:var(--muted);font-size:.75rem;margin-bottom:3px}.float-card strong{font-size:.96rem}.fc1{left:-1%;top:15%}.fc2{right:-1%;bottom:17%}.fc-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#fff0f2;font-size:22px}.mini-dot{width:8px;height:8px;background:#17a36b;border-radius:50%;display:inline-block;margin-right:5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:-1px}.stat{padding:24px;text-align:center;background:white}.stat strong{display:block;font-size:1.8rem;letter-spacing:-1px}.stat span{color:var(--muted);font-size:.88rem}
+section{padding:78px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 34px}.kicker{color:var(--red);font-size:.78rem;text-transform:uppercase;letter-spacing:1.4px;font-weight:850}.section-head h2{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-1.5px;margin:12px 0}.section-head p{color:var(--muted);line-height:1.7;margin:0}
+.finder{background:var(--bg)}.search-panel{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;padding:22px}.filters{display:grid;grid-template-columns:1.1fr 1.1fr 1.1fr auto;gap:12px;align-items:end}.field label{display:block;font-size:.8rem;font-weight:800;margin:0 0 8px;color:#4d586a}.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid #e8e3e5;border-radius:11px;background:white;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.field textarea:focus{border-color:#e77a89;box-shadow:0 0 0 3px #ffedf0}.location-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px;color:var(--muted);font-size:.88rem}.location-row button{border:0;background:transparent;color:var(--red);font-weight:800}.results-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:30px 0 16px}.results-head h3{margin:0;font-size:1.25rem}.results-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.donor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.donor-card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;transition:.2s}.donor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.donor-top{display:flex;align-items:center;gap:12px}.blood{width:55px;height:55px;flex-shrink:0;border-radius:17px;background:#fff0f2;color:var(--red);display:grid;place-items:center;font-weight:900;font-size:1.05rem}.donor-name{font-weight:850;font-size:1.02rem}.donor-city{color:var(--muted);font-size:.84rem;margin-top:4px}.available{margin-left:auto;align-self:flex-start;border-radius:100px;padding:6px 8px;font-size:.7rem;font-weight:850;background:#e8faf2;color:var(--green)}.unavailable{background:#f2f3f5;color:#6d7480}.donor-meta{display:flex;gap:10px;flex-wrap:wrap;margin:17px 0;color:#5d6878;font-size:.82rem}.donor-meta span{background:#f8f8fa;padding:7px 9px;border-radius:8px}.donor-actions{display:flex;gap:9px}.donor-actions .btn{flex:1;padding:10px 8px;font-size:.85rem}.empty{grid-column:1/-1;text-align:center;padding:38px;border:1px dashed #e7cbd0;border-radius:18px;color:var(--muted);background:white}.notice{font-size:.8rem;color:#7a6570;line-height:1.6;margin-top:17px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.step{padding:27px;border:1px solid var(--line);border-radius:20px;background:white}.step-num{width:47px;height:47px;border-radius:15px;background:#fff0f2;color:var(--red);display:grid;place-items:center;font-size:1.25rem;font-weight:900}.step h3{margin:19px 0 9px}.step p{color:var(--muted);line-height:1.7;margin:0;font-size:.93rem}
+.register{background:linear-gradient(120deg,#fff7f8,#fff)}.register-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}.register-copy h2{font-size:2.65rem;letter-spacing:-1.6px;line-height:1.1;margin:13px 0}.register-copy p{color:var(--muted);line-height:1.8}.benefit{display:flex;gap:10px;align-items:center;margin:15px 0;color:#465164}.check{width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:#e5f8ef;color:var(--green);font-weight:900}.form-card{background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;padding:27px}.form-card h3{margin:0 0 6px;font-size:1.35rem}.form-card>p{margin:0 0 22px;color:var(--muted);font-size:.9rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field.full{grid-column:1/-1}.field textarea{resize:vertical;min-height:80px}.form-card .btn{width:100%;margin-top:17px}.privacy{font-size:.76rem;color:var(--muted);line-height:1.6;margin-top:12px}
+.emergency{padding:0 0 78px}.emergency-box{background:linear-gradient(110deg,#b90e29,#e3324b);border-radius:24px;color:white;padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;position:relative}.emergency-box:after{content:"✚";font-size:190px;position:absolute;right:28%;top:-70px;color:#ffffff12}.emergency-box h2{font-size:2rem;margin:0 0 8px;letter-spacing:-1px}.emergency-box p{margin:0;color:#ffe3e7;line-height:1.6}.emergency-box .btn{position:relative;z-index:1;background:white;color:var(--red)}
+footer{background:#151b29;color:#e8eaf0;padding:38px 0}.footer-row{display:flex;justify-content:space-between;gap:22px;align-items:center;flex-wrap:wrap}.footer-brand{font-size:1.2rem;font-weight:850}.footer-brand span{color:#ff6679}.footer-note{color:#abb2c1;font-size:.83rem;line-height:1.6;max-width:560px;margin-top:8px}.footer-links{display:flex;gap:20px;color:#d0d4de;font-size:.88rem}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,130px);opacity:0;background:#172033;color:white;padding:14px 19px;border-radius:13px;box-shadow:var(--shadow);z-index:99;transition:.3s;max-width:90%;text-align:center}.toast.show{transform:translate(-50%,0);opacity:1}.modal-backdrop{position:fixed;inset:0;background:#1215228c;display:none;place-items:center;z-index:80;padding:18px}.modal-backdrop.show{display:grid}.modal{background:white;border-radius:20px;padding:26px;max-width:500px;width:100%;box-shadow:var(--shadow)}.modal h3{margin:0 0 8px}.modal p{color:var(--muted);line-height:1.6}.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}
+@media(max-width:900px){.navlinks{gap:14px}.hero-grid{gap:15px}.filters{grid-template-columns:1fr 1fr}.donor-grid{grid-template-columns:repeat(2,1fr)}.register-grid{grid-template-columns:1fr;gap:25px}.hero h1{letter-spacing:-2px}.hero-art{min-height:320px}}
+@media(max-width:650px){.nav{height:66px}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:white;padding:20px 5%;border-bottom:1px solid var(--line);flex-direction:column}.navlinks.open{display:flex}.nav-actions .outline{display:none}.menu-toggle{display:block}.nav-actions .btn{padding:10px 12px}.hero{padding:45px 0 35px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:2.9rem}.hero-art{min-height:300px}.big-drop{font-size:135px}.fc1{left:0}.fc2{right:0}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:18px 10px}.stat strong{font-size:1.5rem}section{padding:58px 0}.filters,.donor-grid,.steps,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.search-panel{padding:15px}.results-head{align-items:flex-start;flex-direction:column}.emergency-box{padding:27px;align-items:flex-start;flex-direction:column}.emergency-box h2{font-size:1.7rem}.footer-row{align-items:flex-start;flex-direction:column}.hero-buttons .btn{flex:1}.register-copy h2{font-size:2.2rem}}
+
+.bank-section{background:#fff}
+.bank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.bank-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 8px 24px rgba(77,18,31,.045)}
+.bank-top{display:flex;gap:12px;align-items:flex-start}
+.bank-icon{width:49px;height:49px;border-radius:15px;background:#fff0f2;color:var(--red);display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.bank-name{font-size:1rem;font-weight:850;line-height:1.4}
+.bank-city{font-size:.84rem;color:var(--muted);margin-top:4px}
+.bank-address{font-size:.86rem;color:#596273;line-height:1.6;margin:16px 0 12px}
+.stock-title{font-size:.78rem;font-weight:850;color:#4d586a;margin-bottom:8px}
+.stock-list{display:flex;gap:7px;flex-wrap:wrap}
+.stock-chip{background:#e8faf2;color:#126b4d;border-radius:8px;padding:7px 9px;font-size:.79rem;font-weight:850}
+.stock-chip.out{background:#f2f3f5;color:#727987}
+.bank-actions{display:flex;gap:9px;margin-top:17px}
+.bank-actions .btn{flex:1;padding:10px 8px;font-size:.83rem}
+.bank-demo{font-size:.74rem;color:#8a6c73;margin-top:12px;line-height:1.5}
+.bank-filters{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:20px}
+.fallback-banks{grid-column:1/-1;background:#fff7f8;border:1px solid #f3cbd2;border-radius:16px;padding:19px}
+.fallback-banks h3{margin:0 0 7px}
+.fallback-banks p{color:var(--muted);line-height:1.6;margin:0 0 14px}
+.fallback-banks .bank-grid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.bank-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.bank-grid,.fallback-banks .bank-grid,.bank-filters{grid-template-columns:1fr}.bank-actions{flex-wrap:wrap}}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="LifeDrop home"><span class="logo">♥</span><span>Life<em>Drop</em></span></a>
+    <nav class="navlinks" id="navlinks"><a href="#home">Home</a><a href="#find">Find Donors</a><a href="#how">How it works</a><a href="#register">Become a Donor</a></nav>
+    <div class="nav-actions"><a class="btn outline" href="#find">Find Blood</a><a class="btn primary" href="#register">＋ Register</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="pulse"></span> Every drop can save a life</div>
+   <h1>Find a donor.<br><span>Give someone</span><br>a tomorrow.</h1>
+   <p>When every second matters, help is closer than you think. Find blood donors by blood group and location, or register to become someone's lifesaver.</p>
+   <div class="hero-buttons"><a class="btn primary" href="#find">⌕ Find a Blood Donor</a><a class="btn outline" href="#register">♥ Become a Donor</a></div>
+   <div class="trust"><div class="avatars"><span>🧑</span><span>👩</span><span>👨</span><span>🧑‍⚕️</span></div><div><strong>One community. Countless lives.</strong><br><span>Connect with willing blood donors.</span></div></div>
+  </div>
+  <div class="hero-art" aria-label="Blood donation illustration">
+   <div class="orb"><div class="big-drop">🩸</div></div>
+   <div class="float-card fc1"><div class="fc-icon">🩸</div><div><small>Blood group</small><strong>Every type matters</strong></div></div>
+   <div class="float-card fc2"><div class="fc-icon">📍</div><div><small>Find help nearby</small><strong><span class="mini-dot"></span>Location-aware search</strong></div></div>
+  </div>
+ </div>
+</section>
+<div class="container"><div class="stats">
+ <div class="stat"><strong>8</strong><span>Common blood groups</span></div><div class="stat"><strong>24/7</strong><span>Search access</span></div><div class="stat"><strong>1</strong><span>Donation can help</span></div><div class="stat"><strong>∞</strong><span>Reasons to care</span></div>
+</div></div>
+<section class="finder" id="find">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Find your match</div><h2>Blood donors near you</h2><p>Choose a blood group and enter a city or use your device location to sort matching donors by approximate distance.</p></div>
+  <div class="search-panel">
+   <div class="filters">
+    <div class="field"><label for="bloodFilter">Blood group</label><select id="bloodFilter"><option value="All">All blood groups</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+    <div class="field"><label for="cityFilter">City / area</label><input id="cityFilter" placeholder="e.g. Pune, Nagpur, Tumsar" /></div>
+    <div class="field"><label for="availabilityFilter">Availability</label><select id="availabilityFilter"><option value="all">All donors</option><option value="yes">Available now</option></select></div>
+    <button class="btn primary" id="searchBtn">Search donors</button>
+   </div>
+   <div class="location-row"><span id="locationStatus">📍 Location search is optional. Allow browser location to calculate distance.</span><button id="useLocation">◎ Use my location</button></div>
+  </div>
+  <div class="results-head"><div><h3>Matching donors</h3><p id="resultCount">Loading donor directory…</p></div><button class="btn soft" id="clearFilters">Reset filters ↺</button></div>
+  <div class="donor-grid" id="donorGrid"></div>
+  <p class="notice">Demo notice: the initial directory contains fictional sample profiles and placeholder phone numbers. Replace them with verified, consenting donors before publishing. Donor availability and eligibility must be confirmed directly; this website is not a blood bank or medical service.</p>
+ </div>
+</section>
+<section class="bank-section" id="blood-banks">
+ <div class="container">
+  <div class="section-head"><div class="kicker">A second way to find help</div><h2>Blood banks near you</h2><p>If no suitable donor is listed, search blood banks by city and check the displayed blood-group stock information.</p></div>
+  <div class="search-panel">
+   <div class="bank-filters">
+    <div class="field"><label for="bankCityFilter">City / area</label><input id="bankCityFilter" placeholder="e.g. Pune, Nagpur, Tumsar" /></div>
+    <div class="field"><label for="bankBloodFilter">Blood group needed</label><select id="bankBloodFilter"><option value="All">Any blood group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+    <button class="btn primary" id="searchBanksBtn">Search blood banks</button>
+   </div>
+   <div class="location-row"><span>📍 Open directions to a blood bank using Google Maps.</span><button id="copyBankSearch">Find more on Google Maps ↗</button></div>
+  </div>
+  <div class="results-head"><div><h3>Blood bank directory</h3><p id="bankResultCount">Search blood banks by location or blood group.</p></div><button class="btn soft" id="resetBanks">Reset filters ↺</button></div>
+  <div class="bank-grid" id="bankGrid"></div>
+  <p class="notice">Important: the blood banks, contact numbers, and stock figures shown in this starter website are fictional demonstration data, not verified facilities or live inventory. Replace them with verified blood-bank records and an authorised stock feed or direct confirmation before publishing. Stock can change quickly; call the facility before travelling. Blood compatibility and transfusion decisions must be handled by qualified healthcare professionals.</p>
+ </div>
+</section>
+<section id="how">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Simple. Fast. Human.</div><h2>How LifeDrop works</h2><p>Three simple steps to help connect people in need with people ready to help.</p></div>
+  <div class="steps">
+   <div class="step"><div class="step-num">01</div><h3>Search by blood group</h3><p>Select the required blood group and add a city or area to find matching registered profiles.</p></div>
+   <div class="step"><div class="step-num">02</div><h3>Check location & contact</h3><p>Review the donor's listed area and approximate distance, then call or message only if the donor has consented to be contacted.</p></div>
+   <div class="step"><div class="step-num">03</div><h3>Donate with care</h3><p>Confirm availability and contact a licensed blood bank or healthcare professional for compatibility and eligibility guidance.</p></div>
+  </div>
+ </div>
+</section>
+<section class="register" id="register">
+ <div class="container register-grid">
+  <div class="register-copy"><div class="kicker">Be someone's hope</div><h2>Your one act of kindness can mean everything.</h2><p>Join the LifeDrop community and make it easier for people nearby to find a willing donor. Register only the information you agree to share.</p>
+   <div class="benefit"><span class="check">✓</span><span>Show your blood group and area</span></div><div class="benefit"><span class="check">✓</span><span>Set your availability status</span></div><div class="benefit"><span class="check">✓</span><span>Choose to share a contact number</span></div>
+  </div>
+  <form class="form-card" id="donorForm">
+   <h3>Become a blood donor</h3><p>Fill in your details to add a profile to this demo directory.</p>
+   <div class="form-grid">
+    <div class="field"><label for="fullName">Full name *</label><input id="fullName" required maxlength="70" placeholder="Your name" /></div>
+    <div class="field"><label for="newBlood">Blood group *</label><select id="newBlood" required><option value="">Select group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+    <div class="field"><label for="phone">Contact number *</label><input id="phone" required inputmode="tel" pattern="[0-9+() -]{8,20}" placeholder="+91 98765 43210" /></div>
+    <div class="field"><label for="newCity">City / area *</label><input id="newCity" required maxlength="90" placeholder="e.g. Pune, Maharashtra" /></div>
+    <div class="field"><label for="newAvailability">Available to donate?</label><select id="newAvailability"><option value="yes">Yes, contact me</option><option value="no">Not available right now</option></select></div>
+    <div class="field"><label for="shareContact">Show my number in directory?</label><select id="shareContact"><option value="yes">Yes, I consent</option><option value="no">No, keep it private</option></select></div>
+    <div class="field full"><label for="extraLocation">Area / landmark (optional)</label><input id="extraLocation" maxlength="120" placeholder="Neighborhood or nearby landmark — don't enter a home address" /></div>
+   </div>
+   <button class="btn primary" type="submit">♥ Register as a donor</button>
+   <div class="privacy">Prototype only: profiles are stored in this browser's local storage, not a secure server. Do not enter real personal data on a public or shared computer. A production site needs secure backend storage, access controls, consent and a deletion option.</div>
+  </form>
+ </div>
+</section>
+<section class="emergency"><div class="container"><div class="emergency-box"><div><h2>Need blood urgently?</h2><p>Contact a licensed blood bank or local emergency service as well as searching this directory.<br>Never rely on an unverified online profile for emergency medical care.</p></div><a class="btn" href="https://www.google.com/maps/search/blood+bank+near+me/" target="_blank" rel="noopener">Find a blood bank ↗</a></div></div></section>
+</main>
+<footer><div class="container footer-row"><div><div class="footer-brand">♥ Life<span>Drop</span></div><div class="footer-note">A community concept to help connect willing donors and people searching for blood. Not a medical provider, emergency service, or substitute for a licensed blood bank.</div></div><div class="footer-links"><a href="#find">Find Donors</a><a href="#register">Register</a><a href="#how">How it works</a></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h3 id="modalTitle">Contact donor</h3><p id="modalText"></p><div class="modal-actions"><button class="btn outline" id="closeModal">Close</button><a class="btn primary" id="modalCall" href="#">Call donor</a></div></div></div>
+<script>
+const sampleDonors = [
+ {id:1,name:"Aarav Patil",blood:"O+",city:"Pune",area:"Kothrud",phone:"+91 90000 00001",available:true,lat:18.5074,lon:73.8077,demo:true},
+ {id:2,name:"Ananya Sharma",blood:"A+",city:"Pune",area:"Shivajinagar",phone:"+91 90000 00002",available:true,lat:18.5308,lon:73.8475,demo:true},
+ {id:3,name:"Rohan Deshmukh",blood:"B+",city:"Nagpur",area:"Dharampeth",phone:"+91 90000 00003",available:true,lat:21.1458,lon:79.0882,demo:true},
+ {id:4,name:"Priya Kulkarni",blood:"AB+",city:"Pune",area:"Hadapsar",phone:"+91 90000 00004",available:false,lat:18.5089,lon:73.9260,demo:true},
+ {id:5,name:"Ishaan More",blood:"O-",city:"Nagpur",area:"Manish Nagar",phone:"+91 90000 00005",available:true,lat:21.1027,lon:79.0610,demo:true},
+ {id:6,name:"Meera Joshi",blood:"B-",city:"Mumbai",area:"Andheri",phone:"+91 90000 00006",available:true,lat:19.1197,lon:72.8468,demo:true},
+ {id:7,name:"Sai Wankhede",blood:"A-",city:"Tumsar",area:"Main Road",phone:"+91 90000 00007",available:true,lat:21.3833,lon:79.7333,demo:true},
+ {id:8,name:"Kavya Nair",blood:"AB-",city:"Mumbai",area:"Dadar",phone:"+91 90000 00008",available:false,lat:19.0178,lon:72.8478,demo:true},
+ {id:9,name:"Aditya Pawar",blood:"O+",city:"Tumsar",area:"Station Area",phone:"+91 90000 00009",available:true,lat:21.3800,lon:79.7300,demo:true}
+];
+const $ = id => document.getElementById(id);
+let userCoords = null;
+let extraDonors = [];
+try { extraDonors = JSON.parse(localStorage.getItem("lifedropDonors") || "[]"); if(!Array.isArray(extraDonors)) extraDonors=[]; } catch(e) { extraDonors=[]; }
+function allDonors(){ return [...extraDonors, ...sampleDonors]; }
+function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>el.classList.remove("show"),3500);}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function distanceKm(a,b){const R=6371, dLat=(b.lat-a.lat)*Math.PI/180,dLon=(b.lon-a.lon)*Math.PI/180;const x=Math.sin(dLat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
+
+// Fictional starter records for interface testing only. Replace with verified facilities and live stock.
+const sampleBanks = [
+ {id:"bank1",name:"City Care Blood Centre (Demo)",city:"Pune",area:"Shivajinagar",address:"Demo address: central Pune area",phone:"+91 80000 00101",stock:{"A+":4,"A-":1,"B+":3,"B-":0,"AB+":2,"AB-":0,"O+":5,"O-":1},demo:true},
+ {id:"bank2",name:"Lifeline Blood Bank (Demo)",city:"Pune",area:"Hadapsar",address:"Demo address: Hadapsar area",phone:"+91 80000 00102",stock:{"A+":2,"A-":0,"B+":4,"B-":1,"AB+":1,"AB-":0,"O+":3,"O-":0},demo:true},
+ {id:"bank3",name:"Regional Blood Centre (Demo)",city:"Nagpur",area:"Dharampeth",address:"Demo address: Dharampeth area",phone:"+91 80000 00103",stock:{"A+":3,"A-":1,"B+":2,"B-":1,"AB+":1,"AB-":1,"O+":4,"O-":2},demo:true},
+ {id:"bank4",name:"Community Blood Bank (Demo)",city:"Tumsar",area:"Main Road",address:"Demo address: Main Road area",phone:"+91 80000 00104",stock:{"A+":1,"A-":0,"B+":2,"B-":0,"AB+":0,"AB-":0,"O+":2,"O-":1},demo:true},
+ {id:"bank5",name:"Metro Blood Services (Demo)",city:"Mumbai",area:"Andheri",address:"Demo address: Andheri area",phone:"+91 80000 00105",stock:{"A+":5,"A-":2,"B+":4,"B-":1,"AB+":2,"AB-":1,"O+":6,"O-":2},demo:true},
+ {id:"bank6",name:"Helping Hands Blood Centre (Demo)",city:"Mumbai",area:"Dadar",address:"Demo address: Dadar area",phone:"+91 80000 00106",stock:{"A+":2,"A-":1,"B+":2,"B-":0,"AB+":1,"AB-":0,"O+":3,"O-":1},demo:true}
+];
+function getMatchingBanks(blood="All", city=""){
+ const term=(city||"").trim().toLowerCase();
+ return sampleBanks.filter(b=>(!term||`${b.city} ${b.area} ${b.name}`.toLowerCase().includes(term))&&(blood==="All"||Number(b.stock[blood]||0)>0));
+}
+function bankCard(b){
+ const chosen=$("bankBloodFilter") ? $("bankBloodFilter").value : "All";
+ const bloods=chosen==="All"?Object.keys(b.stock):[chosen];
+ const stockHtml=bloods.map(bg=>`<span class="stock-chip ${Number(b.stock[bg]||0)>0?"":"out"}">${esc(bg)}: ${Number(b.stock[bg]||0)>0?`${Number(b.stock[bg])} units`:"Not listed"}</span>`).join("");
+ const mapQuery=encodeURIComponent(`${b.name.replace(" (Demo)","")}, ${b.area}, ${b.city}`);
+ return `<article class="bank-card"><div class="bank-top"><div class="bank-icon">🏥</div><div><div class="bank-name">${esc(b.name)}</div><div class="bank-city">📍 ${esc(b.area)}, ${esc(b.city)}</div></div></div><div class="bank-address">${esc(b.address)}</div><div class="stock-title">DISPLAYED BLOOD STOCK (DEMO)</div><div class="stock-list">${stockHtml}</div><div class="bank-actions"><button class="btn primary" onclick="contactBank('${esc(b.id)}')">☎ Contact</button><a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noopener">↗ Directions</a></div><div class="bank-demo">Illustrative stock only · Call to confirm availability.</div></article>`;
+}
+function renderBanks(){
+ const blood=$("bankBloodFilter").value, city=$("bankCityFilter").value.trim();
+ const banks=getMatchingBanks(blood,city);
+ $("bankResultCount").textContent=`${banks.length} demo blood bank record${banks.length===1?"":"s"} match your filters.`;
+ $("bankGrid").innerHTML=banks.length?banks.map(bankCard).join(""):'<div class="empty"><div style="font-size:2rem">🏥</div><h3>No demo blood banks match</h3><p>Try a different city or blood group, or search verified facilities on Google Maps.</p></div>';
+}
+function contactBank(id){
+ const b=sampleBanks.find(x=>x.id===id); if(!b)return;
+ toast("Demo blood bank only: this placeholder number is not a real facility contact. Verify a local blood bank before travelling.");
+}
+
+function renderDonors(){
+ const blood=$("bloodFilter").value, city=$("cityFilter").value.trim().toLowerCase(), onlyAvailable=$("availabilityFilter").value==="yes";
+ let donors=allDonors().filter(d=>(blood==="All"||d.blood===blood)&&(!city||`${d.city} ${d.area||""}`.toLowerCase().includes(city))&&(!onlyAvailable||d.available));
+ if(userCoords) donors.sort((a,b)=>distanceKm(userCoords,a)-distanceKm(userCoords,b));
+ $("resultCount").textContent=`${donors.length} profile${donors.length===1?"":"s"} match your search${userCoords?" · sorted by distance":""}.`;
+ const grid=$("donorGrid");
+ if(!donors.length){
+   const bankMatches = getMatchingBanks(blood, city);
+   grid.innerHTML = '<div class="empty"><div style="font-size:2rem">🔎</div><h3>No matching donors found</h3><p>Try another blood group or a nearby city. You can also check the blood banks below.</p><button class="btn primary" onclick="document.getElementById(\'blood-banks\').scrollIntoView({behavior:\'smooth\'})">Check nearby blood banks ↓</button></div>' +
+     (bankMatches.length ? '<div class="fallback-banks"><h3>Alternative: blood banks matching your search</h3><p>Demo directory only — confirm stock directly with the facility.</p><div class="bank-grid">' + bankMatches.slice(0,2).map(bankCard).join("") + '</div></div>' : '');
+   return;
+ }
+ grid.innerHTML=donors.map(d=>{
+   const dist=userCoords?`<span>📍 ${distanceKm(userCoords,d).toFixed(1)} km away</span>`:'';
+   const contact=d.shareContact===false?'<span>🔒 Contact private</span>':`<span>☎ ${esc(d.phone)}</span>`;
+   const callAllowed=d.shareContact!==false && d.phone;
+   const label=d.available?'<span class="available">● Available</span>':'<span class="available unavailable">Not available</span>';
+   const mapQuery=encodeURIComponent(`${d.area?d.area+", ":""}${d.city}`);
+   return `<article class="donor-card"><div class="donor-top"><div class="blood">${esc(d.blood)}</div><div><div class="donor-name">${esc(d.name)}</div><div class="donor-city">${esc(d.area?d.area+", ":"")}${esc(d.city)}</div></div>${label}</div><div class="donor-meta"><span>🩸 ${esc(d.blood)} blood group</span>${dist}${contact}</div><div class="donor-actions">${callAllowed?`<button class="btn primary" onclick="contactDonor(${Number(d.id)})">☎ Contact</button>`:`<button class="btn outline" onclick="toast('This donor has chosen not to display their contact number.')">Contact hidden</button>`}<a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noopener">↗ Map</a></div></article>`;
+ }).join("");
+}
+function contactDonor(id){const d=allDonors().find(x=>Number(x.id)===Number(id));if(!d)return;if(d.shareContact===false){toast("This donor has chosen to keep their number private.");return;} $("modalTitle").textContent=`Contact ${d.name}`;$("modalText").textContent=`Blood group: ${d.blood}. Area: ${d.area?d.area+", ":""}${d.city}. Please confirm availability and suitability directly. ${d.demo?"This is a fictional demo profile, not a real contact.":""}`;$("modalCall").href="tel:"+String(d.phone||"").replace(/[^\d+]/g,"");$("modalCall").textContent="Call "+(d.phone||"");$("modalCall").onclick=e=>{if(d.demo){e.preventDefault();toast("Demo profile: this placeholder number is not a real donor contact.");}};$("modalBackdrop").classList.add("show");}
+$("closeModal").addEventListener("click",()=>$("modalBackdrop").classList.remove("show"));
+$("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))$("modalBackdrop").classList.remove("show");});
+$("searchBtn").addEventListener("click",renderDonors);
+$("clearFilters").addEventListener("click",()=>{$("bloodFilter").value="All";$("cityFilter").value="";$("availabilityFilter").value="all";renderDonors();});
+$("bloodFilter").addEventListener("change",renderDonors);$("availabilityFilter").addEventListener("change",renderDonors);
+$("cityFilter").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();renderDonors();}});
+$("useLocation").addEventListener("click",()=>{
+ if(!navigator.geolocation){$("locationStatus").textContent="Your browser does not support location. Search by city instead.";return;}
+ $("locationStatus").textContent="Requesting location permission…";
+ navigator.geolocation.getCurrentPosition(pos=>{userCoords={lat:pos.coords.latitude,lon:pos.coords.longitude};$("locationStatus").textContent="✓ Location enabled. Donors are sorted by approximate distance from your device.";renderDonors();},()=>{$("locationStatus").textContent="Location not shared. You can search by city instead.";toast("Location permission was not granted.");},{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
+});
+$("donorForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const name=$("fullName").value.trim(),blood=$("newBlood").value,phone=$("phone").value.trim(),city=$("newCity").value.trim();
+ if(!name||!blood||!phone||!city){toast("Please complete all required fields.");return;}
+ if(!/^[0-9+() -]{8,20}$/.test(phone)){toast("Please enter a valid contact number.");return;}
+ const donor={id:Date.now(),name,blood,phone,city,area:$("extraLocation").value.trim(),available:$("newAvailability").value==="yes",shareContact:$("shareContact").value==="yes",demo:false};
+ extraDonors.unshift(donor);
+ try{localStorage.setItem("lifedropDonors",JSON.stringify(extraDonors));}catch(err){extraDonors.shift();toast("Could not save profile in this browser.");return;}
+ $("donorForm").reset();$("cityFilter").value=city;$("bloodFilter").value=blood;renderDonors();$("find").scrollIntoView({behavior:"smooth"});toast("Donor profile added to this browser's demo directory.");
+});
+$("menuToggle").addEventListener("click",()=>$("navlinks").classList.toggle("open"));
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>$("navlinks").classList.remove("open")));
+
+$("searchBanksBtn").addEventListener("click",renderBanks);
+$("bankBloodFilter").addEventListener("change",renderBanks);
+$("bankCityFilter").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();renderBanks();}});
+$("resetBanks").addEventListener("click",()=>{$("bankBloodFilter").value="All";$("bankCityFilter").value="";renderBanks();});
+$("copyBankSearch").addEventListener("click",()=>{
+ const city=$("bankCityFilter").value.trim();
+ const blood=$("bankBloodFilter").value;
+ const query=[blood!=="All"?blood+" blood bank": "blood bank",city].filter(Boolean).join(" ");
+ window.open("https://www.google.com/maps/search/"+encodeURIComponent(query),"_blank","noopener");
+});
+renderDonors();
+renderBanks();
+</script>
+</body>
+</html>
